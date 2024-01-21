@@ -1,0 +1,31 @@
+def fibonacci(n):
+    a = 0
+    b = 1
+    
+     
+    # Check is n is less
+    # than 0
+    if n < 0:
+        print("Incorrect input")
+         
+    # Check is n is equal
+    # to 0
+    elif n == 0:
+        yield 0
+       
+    # Check if n is equal to 1
+    elif n == 1:
+        yield b
+    else:
+        yield a
+        yield b
+        for i in range(1, n):
+            c = a + b
+            a = b
+            b = c
+            yield b
+ 
+# Driver Program
+values=fibonacci(12)
+for x in values:
+    print(x)
